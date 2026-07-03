@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>catty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Mono&family=Inter&family=Playfair+Display&family=Space+Grotesk&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: #f4f4f4;
+      color: #111;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 2rem;
+    }
+
+    .brand-name {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: lowercase;
+      color: #111;
+      transition: font-family 0.15s ease;
+    }
+
+    .logo {
+      width: 300px;
+      height: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <svg class="logo" viewBox="0 0 1024 1024" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd">
+      <path style="opacity:1" d="M689.5 550.5q2-3.5 0-7-12.965-119.74-126-160.5-108.383-27.975-185.5 52.5-71.895 90.416-28 198 16.197 37.148 42 68 1.72 16.28-14.5 14.5a182 182 0 0 1-15.5-16.5q-43.416-58.866-50-132-2.028-31.19 5.5-61.5-36.98-48.233-47.5-108.5-6.966-45.924 5.5-90.5 61.126.876 111 36a542 542 0 0 1 37 30.5q88.248-39.982 176.5 0 30.634-30.45 69.5-49.5 37.175-17.045 78-17 27.063 109.49-42 198.5 20.376 101.995-39.5 187l-13 17q-6.474 10.267-17.5 5.5-8.165-7.238-2.5-16.5 54.953-63.583 56.5-148m-289-167q.915 1.337 1 3a123 123 0 0 0-12 8.5q-1.5 1-3 0-30.434-29.133-71-41.5-2.401.803-1.5 3 21.566 18.186 34.5 43v1q-16.797-15.285-37.5-25-2.25.25-2.5 2.5 4.466 43.64 26 81.5l-8 18q-1 2-2 0-44.4-67.615-33-148 64.138 8.32 109 54m332-38v4q-.401 2.398 1 4 3.31 68.814-36 125a247 247 0 0 1-9-19q22.284-38.598 25.5-83-1.574-1.526-3.5-.5-20.55 9.635-36.5 25.5 12.008-26.385 35-45 .918-2.606-2-3-40.16 12.713-70.5 41.5-1.5 1-3 0a942 942 0 0 1-12-10q43.506-45.634 106.5-55.5a6.3 6.3 0 0 1 3 1 68.8 68.8 0 0 1 1.5 15" />
+    </svg>
+    <h1 class="brand-name" id="brandName">catty</h1>
+  </section>
+
+  <script>
+    const fonts = [
+      '"DM Serif Display", serif',
+      '"IBM Plex Mono", monospace',
+      'Inter, sans-serif',
+      '"Playfair Display", serif',
+      '"Space Grotesk", sans-serif',
+      'Georgia, serif',
+      '"Courier New", monospace',
+      'system-ui, sans-serif',
+      'Arial, sans-serif',
+      '"Times New Roman", serif',
+      'Verdana, sans-serif',
+      'Tahoma, sans-serif',
+      '"Trebuchet MS", sans-serif',
+      'Palatino Linotype, Palatino, serif',
+      'Garamond, serif',
+      'Helvetica, Arial, sans-serif'
+    ];
+
+    const brandName = document.getElementById('brandName');
+    let fontIndex = 0;
+
+    setInterval(() => {
+      fontIndex = (fontIndex + 1) % fonts.length;
+      brandName.style.fontFamily = fonts[fontIndex];
+    }, 600);
+  </script>
+</body>
+</html>
